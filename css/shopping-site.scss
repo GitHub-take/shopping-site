@@ -1,0 +1,1202 @@
+@import "compass";
+@charset "utf-8";
+
+// font-family
+//$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+$baseFontFamily :"Hiragino Kaku Gothic ProN";
+
+// colors
+$baseColor: #f9f8f6;
+$subColor: #ffffff;
+$keyColor1: #887f69;
+$keyColor2: #e2ddd4;
+$keyColor3: #b0b0b0;
+$keyColor4: #9d1a2d;
+$fontColor: #000000;
+
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+  background-color: $baseColor;
+}
+
+a {
+  @include link-colors($fontColor, darken($fontColor, 10%), lighten($fontColor, 5%), darken($fontColor, 10%));
+  text-decoration: none;
+}
+
+/* Font
+------------------------------------------------------------*/
+
+/* Align
+------------------------------------------------------------*/
+
+/* Layout
+------------------------------------------------------------*/
+
+/* Contents
+------------------------------------------------------------*/
+@media (max-width: 550px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+// common
+
+/* Sass
+------------------------------------------------------------*/
+@mixin fontsize($size: 24, $base: 10) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+
+/* index.html
+------------------------------------------------------------*/
+
+/* header
+------------------------------------------------------------*/
+header {
+  padding-top: 40px;
+  
+  #header_left_sp, #header_right_sp {
+    display: none;
+  }
+  // #header_left_sp, #header_right_sp
+  
+  #header_left_pc {
+    a {
+      @include display-flex;
+      align-items: center;
+      @include flex-direction(row);
+      height: 59px;
+     }
+  }
+  // #header_left_pc
+  
+  #header_right {
+    margin-left: 0;
+    width: 52%;
+  }
+  // #header_right
+  
+  #header_right_pc {
+    @include display-flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    @include flex-direction(row);
+    
+    .header_nav_pc {
+      ul {
+        @include display-flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        @include flex-direction(row);
+        margin-bottom: 0;
+        height: 59px;
+        li {
+          margin-bottom: 0;
+          margin-left: 20px;
+          list-style: none;
+        }
+      }
+    }
+    // .header_nav_pc
+    
+    .sns_fb_pc {
+      margin-left: 15px;
+    }
+    // .sns_fb_pc
+    
+    .sns_insta_pc {
+      margin-left: 10px;
+    }
+    // .sns_insta_pc
+  }
+  // #header_right_pc
+  
+  @media (max-width: 550px) {
+    padding-top: 15px;
+    
+    #header_left_pc, #header_right_pc {
+      display: none;
+    }
+    // #header_left_pc (sp), #header_right_pc (sp)
+    
+    #header_left_sp {
+      display:block;
+      text-align: center;
+    }
+    // #header_left_sp (sp)
+    
+    #header_right {
+      width: 100%;
+    }
+    // #header_right (sp)
+    
+    #header_right_sp {
+      padding-top: 5px;
+      @include display-flex;
+      justify-content: center;
+      align-items: center;
+      @include flex-direction(row);
+      
+      .sns_fb_sp {
+        margin-right: 12px;
+      }
+      
+      .sns_insta_sp {
+        margin-right: 12px;
+      }
+        
+      .header_nav_sp {
+        #menu {
+          background-color: $subColor;
+          margin-bottom: 0;
+          border-top: 1px solid $keyColor1;
+          border-right: 1px solid $keyColor1;
+          border-left: 1px solid $keyColor1;
+          border-width: medium;
+          z-index: 100;
+          position: absolute;
+          top:67px;
+          right:3%;
+          display: none;
+          
+          li {
+            margin-bottom: 0;
+            list-style: none;
+            a {
+              display: block;
+              padding: 10px;
+              border-bottom: 1px solid $keyColor1;
+              border-width: medium;
+            }
+          }
+        }
+        // #menu (sp)
+      }
+      // .header_nav_sp (sp)
+    }
+    // #header_right_sp (sp)
+  }
+  // max-width: 550px
+}
+// header
+
+/* main
+------------------------------------------------------------*/
+#main {
+  padding-top: 40px;
+  
+  @media (max-width: 550px) {
+    padding-top: 5px;
+  }
+  // max-widht: 550px
+  
+  #main_content {
+    width: 75%;
+  
+    @media (max-width: 550px) {
+      width: 100%;
+    }
+    // max-widht: 550px
+  }
+  // #main_content
+  
+  #carousel {
+    .owl-dot {
+      height: 24px;
+    }
+    img {
+      display: block;
+      height: 280px;
+      width: 100%;
+    }
+    @media (max-width: 550px) {
+      .owl-dot {
+        margin-bottom: 0;
+      }
+      img {
+        height: 120px;
+      }
+    }
+    // max-widht: 550px
+  }
+  // #carousel
+  
+  .sp_title {
+    display: none;
+  }
+  // .sp_title
+  
+  .title {
+    width: 100%;
+  }
+  // .title
+  
+  @media (max-width: 550px) {
+    .sp_title {
+      display: block;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    // .sp_title (sp)
+    
+    .title {
+      display: none;
+    }
+    // .title (sp)
+  }
+  // max-widht: 550px
+  
+  .new_item, .popular_item {
+    padding: 30px 0;
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+
+    .item {
+      width: (100% / 3);
+      padding: 13px 13px 20px 13px;
+      background-color: $subColor;
+      border: 1px solid $baseColor;
+      @include box-sizing(border-box);
+      font-family: "Hiragino Kaku Gothic ProN";
+      
+      img {
+        width: 100%;
+        height: 205px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 10px;
+      }
+      p {
+        @include fontsize(12);
+        letter-spacing: 0.05rem;
+        margin-bottom: 0;
+      }
+      #fee {
+        margin-top: 20px;
+      }
+    }
+    // .item
+    
+    @media (max-width: 550px) {
+      padding: 15px 0;
+      
+      .item {
+        width: (100% / 2);
+        padding: 9px 9px 17px 9px;
+        
+        img {
+          height: 132px;
+          margin-bottom: 5px;
+        }
+        p {
+          @include fontsize(11);
+        }
+        #fee {
+        margin-top: 8px;
+        }
+      }
+      // .item (sp)
+    }
+    // max-widht: 550px
+  }
+  // .new_item, .popular_item
+  
+  .shopping_guide {
+    padding: 30px 0;
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    
+    .guide {
+      padding: 20px 20px 15px 20px;
+      width: (100% / 2);
+      background-color: $subColor;
+      @include box-sizing(border-box);
+      font-family: "Hiragino Kaku Gothic ProN";
+      
+      h3 {
+        @include fontsize(16);
+        color: $keyColor1;
+        font-weight: bold;
+      }
+      img {
+        display: block;
+      }
+      p {
+        @include fontsize(12);
+        color: $keyColor1;
+        font-weight: bold;
+        
+        span {
+          display: block;
+          @include fontsize(12);
+          color: #000000;
+          font-weight: normal;
+          letter-spacing: 0.05rem;
+        }
+      }
+    }
+    // .guide
+    
+    .delivery {
+      border-right: 2.5px solid $baseColor;
+      
+      img {
+        width: 55%;
+        height: 45px;
+        margin-bottom: 15px;
+      }
+      p {
+        margin-bottom: 18px;
+        
+        span {
+          padding-top: 4px;
+        }
+      }
+    }
+    // .delivery
+    
+    .pay {
+      border-left: 2.5px solid $baseColor;
+      
+      h3 {
+        margin-bottom: 15px;
+      }
+      img {
+        width: 100%;
+        height: 37px;
+        margin: 10px 0;
+      }
+      p {
+        margin-bottom: 0;
+        
+        span {
+          padding-top: 4px;
+          padding-bottom: 15px;
+        }
+      }
+    }
+    // .pay
+    
+    @media (max-width: 550px) {
+      padding: 15px 0;
+      
+      .guide {
+        width: 100%;
+      }
+      // .guide (sp)
+      
+      .delivery {
+        border-right: 0px;
+        margin-bottom: 5px;
+        img {
+          width: 70%;
+        }
+      }
+      // .delivery (sp)
+      
+      .pay {
+        border-left: 0px;
+        img {
+          height: 32px;
+        }
+      }
+      // .pay (sp)
+    }
+    // max-width: 550px
+  }
+  // .shopping_guide
+  
+  #sidebar {
+    margin-left: 2%;
+    width: 23%;
+    
+    .search {
+      background-color: $subColor;
+      padding: 20px;
+    
+      img {
+        display: block;
+        margin-bottom: 10px;
+      }
+      form {
+        margin-bottom: 0;
+        
+        input {
+          height: 30px;
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 0;
+          border: 0;
+          border-radius: 0;
+          color: #b5b5b5;
+          @include fontsize(11);
+          font-style: oblique;
+          letter-spacing: 0.05rem;
+          background-color: #eeeeee;
+          background-image: url("../images/top/search_icon.png");
+          background-repeat: no-repeat;
+          background-position: 93% center;
+        }
+      }
+    }
+    // .search
+    
+    .content {
+      background-color: $keyColor1;
+      height: 45px;
+      margin-top: 10px;
+      @include box-sizing(border-box);
+      @include display-flex;
+      justify-content: space-between;
+      @include flex-direction(row);
+    }
+    // .content
+    
+    .link {
+      padding: 16px 10px 16px 15px;
+    }
+    // .link
+    
+    .categories {
+      
+      .category {
+        padding: 18px 8px 18px 15px;
+      }
+      // .category
+      
+      ul {
+        margin-bottom: 0;
+
+        li{
+          background-color: $subColor;
+          height: 45px;
+          line-height: 45px;
+          padding-left: 15px;
+          margin-bottom: 2px;
+          list-style: none;
+          @include fontsize(12);
+          letter-spacing: 0.05rem;
+          font-family: "Hiragino Kaku Gothic ProN";
+          background-image: url("../images/top/next_icon_gray.png");
+          background-repeat: no-repeat;
+          background-position: 95% center;
+        }
+      }
+    }
+    // .categories
+    
+    .about, .shop_info {
+      .about_title, .shop_info_title {
+        background-color: $keyColor1;
+        height: 45px;
+        line-height: 45px;
+        margin-top: 10px;
+        padding-left: 15px;
+      }
+      // .about_title, .shop_info_title
+      
+      .about_content, .shop_info_content {
+        background-color: $subColor;
+        padding: 10px 11px 20px 11px;
+        .about_img, .shop_info_img {
+          .about_pic1, .shop_info_pic1 {
+            display: block;
+            width: 100%;
+            height: 125px;
+          }
+        }
+        
+        .about_info, .shop_info_info {
+          p {
+            margin: 10px 0 20px;
+            @include fontsize(12);
+            letter-spacing: 0.05rem;
+            font-family: "Hiragino Kaku Gothic ProN";
+          }
+          a {
+            .about_pic2,.shop_info_pic2 {
+              display: block;
+              margin: 0 auto;
+            }
+          }
+        }
+        // .about_info, .shop_info_info
+      }
+      // .about_content, .shop_info_content
+    }
+    // about, shop_info
+    
+    @media (max-width: 550px) {
+      margin-left: 0;
+      width: 100%;
+      
+      .search {
+        img {
+          display: none;
+        }
+      }
+      // .search (sp)
+      
+      .link {
+        margin-top: 15px;
+      }
+      // .link (sp)
+      
+      .categories {
+        ul {
+          li{
+            background-position: 96% center;
+          }
+        }
+      }
+      // categories (sp)
+      
+      .about, .shop_info {
+      
+        .about_content, .shop_info_content {
+          @include display-flex;
+          @include flex-direction(row);
+          padding: 10px;
+          
+          .about_img, .shop_info_img {
+            margin-right: 11px;
+            width: 100%;
+            
+            .about_pic1, .shop_info_pic1 {
+              height: 81px;
+            }
+          }
+          // .about_img, .shop_info_img (sp)
+        
+          .about_info, .shop_info_info {
+            width: 100%;
+            
+            p {
+              margin: 0 0 15px 0;
+              @include fontsize(11);
+            }
+            a {
+              .about_pic2,.shop_info_pic2 {
+                margin: 0;
+                width: 70%;
+              }
+            }
+          }
+          // .about_info, .shop_info_info (sp)
+        }
+        // .about_content, .shop_info_content (sp)
+      }
+      // .about_sp, .shop_info_sp (sp)
+    }
+    // max-width: 550px
+  }
+  // #sidebar
+}
+// #main
+
+/* footer
+------------------------------------------------------------*/
+footer {
+  
+  #pagetop {
+    display:block;
+    padding: 30px 0 20px 0;
+    margin-left: auto;
+  }
+  // #pagetop
+  
+  .footer_list {
+    border-top: 1px solid $keyColor1;
+    padding-top: 35px;
+    margin-bottom: 30px;
+    @include display-flex;
+    justify-content: center;
+    @include flex-direction(row);
+    
+    li {
+      list-style: none;
+      margin: 0 9px;
+      @include fontsize(12);
+      letter-spacing: 0.05rem;
+      font-family: "Hiragino Kaku Gothic ProN";
+    }
+  }
+  // .footer_list
+  
+  .copyright {
+    p {
+      @include fontsize(10);
+      letter-spacing: 0.05rem;
+      font-family: "Hiragino Kaku Gothic ProN";
+      color: #b8b4ac;
+      text-align: center;
+      margin-bottom: 150px;
+    }
+  }
+  // .copyright
+}
+// footer
+
+@media (max-width: 550px) {
+  footer {
+    #pagetop {
+      padding: 30px 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    // #pagetop (sp)
+  
+    .footer_list {
+      padding: 18px 16px 10px 16px;
+      margin-bottom: 0;
+      flex-wrap: wrap;
+    
+      li {
+        margin: 0 2px;
+        @include fontsize(11);
+      }
+    }
+    // .footer_list (sp)
+    
+    .copyright {
+      padding: 0 11px;
+      @include box-sizing(border-box);
+      p {
+        margin-bottom: 90px;
+      }
+    }
+    // .copyright (sp)
+    
+  }
+  // footer (sp)
+}
+// max-width: 550px
+
+/* list.html
+------------------------------------------------------------*/
+#main {
+  
+  #main_content {
+    
+    #breadcrumbs {
+      height: 34px;
+      @include box-sizing(border-box);
+      @include border-radius(3px);
+      padding: 10px 30px;
+      margin-bottom: 10px;
+      background-color: #e8e4da;
+      background-image: url("../images/list/home_icon.png");
+      background-repeat: no-repeat;
+      background-position: 1.5% center;
+      
+      p {
+        @include fontsize(11);
+        font-family: "Hiragino Kaku Gothic ProN";
+        color: $keyColor1;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        
+        span {
+          color: #626262;
+          padding: 0 8px;
+        }
+      }
+      
+       @media (max-width: 550px) {
+         background-position: 3% center;
+       }
+       // max-width: 550px
+    }
+    // #breadcrumbs
+    
+    #cate_img_sp {
+      display: none;
+    }
+    // #cate_img_sp
+    
+    #cate_img_pc {
+      width: 100%;
+      height: 170px;
+    }
+    // #cate_img_pc
+    
+    @media (max-width: 550px) {
+      #cate_img_sp {
+        display: block;
+        width: 100%;
+        height: 85px;
+      }
+      // #cate_img_sp (sp)
+    
+      #cate_img_pc {
+        display: none;
+      }
+      // #cate_img_pc (sp)
+    }
+    // max-width: 550px
+    
+    .list_item, .recent_item {
+      @include display-flex;
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+
+      .item {
+        width: (100% / 3);
+        padding: 13px 13px 20px 13px;
+        background-color: $subColor;
+        border: 1px solid $baseColor;
+        @include box-sizing(border-box);
+        font-family: "Hiragino Kaku Gothic ProN";
+      
+        img {
+          width: 100%;
+          height: 205px;
+          display: block;
+          margin-right: auto;
+          margin-left: auto;
+          margin-bottom: 10px;
+        }
+        p {
+          @include fontsize(12);
+          letter-spacing: 0.05rem;
+          margin-bottom: 0;
+        }
+        #fee {
+          margin-top: 20px;
+        }
+      }
+      // .item
+    
+      @media (max-width: 550px) {
+        padding-top: 10px;
+      
+        .item {
+          width: (100% / 2);
+          padding: 9px 9px 17px 9px;
+          
+          img {
+            height: 132px;
+            margin-bottom: 5px;
+          }
+          p {
+            @include fontsize(11);
+          }
+          #fee {
+          margin-top: 8px;
+          }
+        }
+        // .item (sp)
+      }
+      // max-widht: 550px
+    }
+    // .list_item, .recent_item
+    
+    .recent_item {
+      padding: 30px 0;
+      
+      @media (max-width: 550px) {
+        padding-top: 15px;
+      }
+      //max-width: 550px
+    }
+    // .recent_item
+    
+    #button {
+      @include display-flex;
+      justify-content: space-between;
+      @include flex-direction(row);
+      margin: 20px 0 30px 0;
+      
+      p {
+        background-color: $keyColor1;
+        width: 121px;
+        height: 40px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        @include fontsize(14);
+        color: #ffffff;
+        font-family: "Avenir Next";
+        font-weight: bold;
+        letter-spacing: 0.05rem;
+        line-height: 40px;
+        text-align: center;
+      }
+      
+      @media (max-width: 550px) {
+        margin: 20px 0 30px 0;
+      }
+    }
+    // #button
+  }
+  // #main_content
+}
+// #main
+
+/* products.html
+------------------------------------------------------------*/
+#main {
+  
+  #main_content {
+    
+    .pro_content {
+      background-color: $subColor;
+      padding: 40px 60px 80px 60px;
+      margin-bottom: 30px;
+      
+      .pro_header {
+        @include display-flex;
+        justify-content: space-between;
+        @include flex-direction(row);
+        margin-bottom: 30px;
+        
+        #pro_title {
+          @include fontsize(14);
+          font-family: "Hiragino Kaku Gothic ProN";
+          letter-spacing: 0.2rem;
+          font-weight: bold;
+          margin-bottom: 0;
+          line-height: 22px;
+        }
+        #part_No {
+          @include fontsize(10);
+          font-family: "Hiragino Kaku Gothic ProN";
+          color: #a6a6a6;
+          margin-bottom: 0;
+          line-height: 22px;
+        }
+      }
+      // .pro_header
+      
+      .pro_img {
+        @include display-flex;
+        @include flex-direction(row);
+        border-top: 1px solid #e3e8cf;
+        border-bottom: 1px solid #e3e8cf;
+        padding: 20px 0 15px 0;
+        
+        .display_img {
+          width: (410 / 577) * 100%;
+          
+          img {
+            width: 100%;
+          }
+        }
+        // .display_img
+        
+        .img_list {
+          @include display-flex;
+          @include flex-direction(row);
+          @include flex-wrap(wrap);
+          width: (167 / 577) * 100%;
+          margin-bottom: 0;
+        
+          li {
+            list-style: none;
+            width: 50%;
+            margin-bottom: 0;
+            @include box-sizing(border-box);
+            padding-left: 8px;
+            
+            img {
+              width: 100%;
+            }
+          }
+        }
+        // .img_list
+      }
+      // .pro_img
+      
+      .color_size {
+        padding: 20px 0;
+        
+        img {
+          display: block;
+        }
+        
+        table {
+          margin-top: 19px;
+          margin-bottom: 0;
+          width: 100%;
+          height: 78px;
+
+          tr {
+            th {
+              background-color: #f9f9f5;
+              color: #887f69;
+              letter-spacing: 0.05rem;
+              @include fontsize(12);
+              padding: 0;
+              font-family: "Hiragino Kaku Gothic ProN";
+              font-weight: normal;
+              text-align: center;
+              width: (160 / 528) * 100%;
+            }
+            td {
+              width: (182 / 528) * 100%;
+              padding: 0;
+              input {
+                display: block;
+                height: 15px;
+                width: 15px;
+                margin: 0 auto;
+              }
+            }
+            .table_h {
+              width: (182 / 528) * 100%;
+            }
+          }
+          // tr
+        }
+        // table
+      }
+      // .color_size
+      
+      #pro_detail {
+        @include display-flex;
+        @include flex-direction(row);
+        @include flex-wrap(wrap);
+        border-bottom: 1px solid #e3e8cf;
+        
+        #pro_valuation {
+          width: (353 / 578) * 100%;
+          padding-right: 25px;
+          @include box-sizing(border-box);
+          
+          .price {
+            @include display-flex;
+            @include flex-direction(row);
+            align-items: center;
+            @include box-sizing(border-box);
+            padding: 19px 0;
+            border-top: 1px solid #e3e8cf;
+            border-bottom: 1px solid #e3e8cf;
+            
+            img {
+              display: block;
+            }
+            p {
+              margin-bottom: 0;
+              padding-left: 70px;
+              @include box-sizing(border-box);
+              font-style: italic;
+              @include fontsize(14);
+              font-family: "Hiragino Kaku Gothic ProN";
+              
+              #mark {
+                color: #e80f66;
+              }
+              #money {
+                color: #e80f66;
+                @include fontsize(22);
+              }
+            }
+          }
+          // .price
+        
+          .quantity {
+            @include display-flex;
+            @include flex-direction(row);
+            align-items: center;
+            @include box-sizing(border-box);
+            padding: 19px 0;
+            
+            img {
+              display: block;
+              padding-right: 50px;
+              @include box-sizing(border-box);
+            }
+            input {
+              display: block;
+              margin-bottom: 0;
+              height: 40px;
+              width: 45%;
+            }
+          }
+          // .quantity
+        }
+        // #pro_valuation
+        
+        #cart {
+          display: block;
+          height: 55px;
+          width: (225 / 578) * 100%;
+        }
+        // #cart
+      }
+      // #pro_detail
+      
+      .pro_description {
+        padding-top: 35px;
+        
+        h3 {
+          @include fontsize(16);
+          font-family: "Hiragino Kaku Gothic ProN";
+          font-weight: bold;
+          letter-spacing: 0.05rem;
+          color: $keyColor1;
+          line-height: 24px;
+        }
+        
+        #pro_description_title {
+          padding-bottom: 15px;
+          border-bottom: 1px solid $keyColor1;
+        }
+        
+        p {
+          @include fontsize(14);
+          font-family: "Hiragino Kaku Gothic ProN";
+          letter-spacing: 0.05rem;
+          line-height: 24px;
+        }
+        
+        table {
+          width: 100%;
+          margin-bottom: 0;
+          
+          tr {
+            th {
+              background-color: #f9f9f5;
+              color: #887f69;
+              letter-spacing: 0.05rem;
+              @include fontsize(12);
+              padding: 0;
+              font-family: "Hiragino Kaku Gothic ProN";
+              font-weight: normal;
+              text-align: center;
+              width: (160 / 528) * 100%;
+            }
+            td {
+              color: #887f69;
+              letter-spacing: 0.05rem;
+              @include fontsize(12);
+              font-family: "Hiragino Kaku Gothic ProN";
+              font-weight: normal;
+              width: (368 / 528) * 100%;
+            }
+          }
+        }
+        // table
+      }
+      // .pro_description
+      
+    }
+    // .pro_content
+    
+    @media (max-width: 550px) {
+      .pro_content {
+        padding: 20px 0 30px 0;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        
+        .pro_header {
+          @include flex-direction(column);
+          margin-bottom: 16px;
+        }
+        // .pro_header (sp)
+        
+        .pro_img {
+          padding: 10px 0 3px 0;
+          @include flex-direction(column);
+          
+          .display_img {
+            width: 100%;
+            margin-bottom: 3px;
+          }
+          // .display_img (sp)
+        
+          .img_list {
+            width: 100%;
+            justify-content: space-between;
+            align-content: space-between;
+        
+            li {
+              width: 18%;
+              padding-left: 0;
+            }
+          }
+          // .img_list
+        }
+        // .pro_img (sp)
+        
+        .color_size {
+          padding: 14px 0;
+          
+          table {
+            margin-top: 14px;
+          }
+        }
+        // .color_size (sp)
+        
+        #pro_detail {
+          @include flex-direction(column);
+          border-bottom: 0;
+          
+          #pro_valuation {
+            width: 100%;
+            padding-right: 0;
+            
+            .price {
+              padding: 14px 0;
+            }
+            // .price (sp)
+            
+            .quantity {
+              padding: 14px 0;
+              border-bottom: 1px solid #e3e8cf;
+            }
+            // .quantity (sp)
+          }
+          // #pro_valuation (sp)
+          
+          #cart {
+            width: 70%;
+            margin: 0 auto;
+            padding-top: 14px;
+          }
+          // #cart (sp)
+        }
+        // #pro_detail (sp)
+        
+        .pro_description {
+          padding-top: 30px;
+          
+          h3 {
+            line-height: 23px;
+            letter-spacing: 0.09rem;
+            margin-bottom: 8px;
+          }
+          #pro_description_title {
+            margin-bottom: 18px;
+          }
+          p {
+            line-height: 20px;
+          }
+          table {
+            tr {
+              td {
+                padding-right: 15px;
+                line-height: 17px;
+              }
+            }
+          }
+        }
+        // .pro_description (sp)
+      }
+      // .pro_content (sp)
+    }
+    // max-width: 550px
+    
+  }
+  // #main_content
+}
+// #main
