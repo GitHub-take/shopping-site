@@ -35,9 +35,9 @@ a {
 ------------------------------------------------------------*/
 header {
   padding-top: 40px; }
-  header #header_left_sp, header #header_right_sp {
+  header #header_right_sp {
     display: none; }
-  header #header_left_pc a {
+  header #header_left a {
     display: -webkit-flex;
     display: flex;
     align-items: center;
@@ -74,11 +74,12 @@ header {
   @media (max-width: 550px) {
     header {
       padding-top: 15px; }
-      header #header_left_pc, header #header_right_pc {
+      header #header_right_pc {
         display: none; }
-      header #header_left_sp {
-        display: block;
-        text-align: center; }
+      header #header_left a {
+        justify-content: center; }
+        header #header_left a img {
+          width: 30%; }
       header #header_right {
         width: 100%; }
       header #header_right_sp {
@@ -94,16 +95,17 @@ header {
         header #header_right_sp .sns_insta_sp {
           margin-right: 12px; }
         header #header_right_sp .header_nav_sp #menu {
-          background-color: #ffffff;
+          width: 100%;
+          background-color: #ff6d77;
+          padding: 15px;
           margin-bottom: 0;
-          border-top: 1px solid #887f69;
-          border-right: 1px solid #887f69;
-          border-left: 1px solid #887f69;
-          border-width: medium;
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
           z-index: 100;
           position: absolute;
-          top: 67px;
-          right: 3%;
+          top: 70px;
+          right: 0;
           display: none; }
           header #header_right_sp .header_nav_sp #menu li {
             margin-bottom: 0;
@@ -111,8 +113,12 @@ header {
             header #header_right_sp .header_nav_sp #menu li a {
               display: block;
               padding: 10px;
-              border-bottom: 1px solid #887f69;
-              border-width: medium; } }
+              border-bottom: 1px solid #ffffff;
+              border-width: thin;
+              color: #ffffff;
+              font-family: "Hiragino Kaku Gothic ProN"; }
+            header #header_right_sp .header_nav_sp #menu li #menu_guide {
+              border-bottom: 0; } }
 
 /* main
 ------------------------------------------------------------*/
@@ -130,13 +136,10 @@ header {
     height: 24px; }
   #main #carousel img {
     display: block;
-    height: 280px;
     width: 100%; }
   @media (max-width: 550px) {
     #main #carousel .owl-dot {
-      margin-bottom: 0; }
-    #main #carousel img {
-      height: 120px; } }
+      margin-bottom: 0; } }
   #main .sp_title {
     display: none; }
   #main .title {
@@ -169,7 +172,6 @@ header {
       font-family: "Hiragino Kaku Gothic ProN"; }
       #main .new_item .item img, #main .popular_item .item img {
         width: 100%;
-        height: 205px;
         display: block;
         margin-right: auto;
         margin-left: auto;
@@ -188,7 +190,6 @@ header {
           width: 50%;
           padding: 9px 9px 17px 9px; }
           #main .new_item .item img, #main .popular_item .item img {
-            height: 132px;
             margin-bottom: 5px; }
           #main .new_item .item p, #main .popular_item .item p {
             font-size: 11px;
@@ -234,7 +235,6 @@ header {
       border-right: 2.5px solid #f9f8f6; }
       #main .shopping_guide .delivery img {
         width: 55%;
-        height: 45px;
         margin-bottom: 15px; }
       #main .shopping_guide .delivery p {
         margin-bottom: 18px; }
@@ -246,7 +246,6 @@ header {
         margin-bottom: 15px; }
       #main .shopping_guide .pay img {
         width: 100%;
-        height: 37px;
         margin: 10px 0; }
       #main .shopping_guide .pay p {
         margin-bottom: 0; }
@@ -264,9 +263,7 @@ header {
           #main .shopping_guide .delivery img {
             width: 70%; }
         #main .shopping_guide .pay {
-          border-left: 0px; }
-          #main .shopping_guide .pay img {
-            height: 32px; } }
+          border-left: 0px; } }
   #main #sidebar {
     margin-left: 2%;
     width: 23%; }
@@ -337,8 +334,7 @@ header {
       padding: 10px 11px 20px 11px; }
       #main #sidebar .about .about_content .about_img .about_pic1, #main #sidebar .about .about_content .about_img .shop_info_pic1, #main #sidebar .about .about_content .shop_info_img .about_pic1, #main #sidebar .about .about_content .shop_info_img .shop_info_pic1, #main #sidebar .about .shop_info_content .about_img .about_pic1, #main #sidebar .about .shop_info_content .about_img .shop_info_pic1, #main #sidebar .about .shop_info_content .shop_info_img .about_pic1, #main #sidebar .about .shop_info_content .shop_info_img .shop_info_pic1, #main #sidebar .shop_info .about_content .about_img .about_pic1, #main #sidebar .shop_info .about_content .about_img .shop_info_pic1, #main #sidebar .shop_info .about_content .shop_info_img .about_pic1, #main #sidebar .shop_info .about_content .shop_info_img .shop_info_pic1, #main #sidebar .shop_info .shop_info_content .about_img .about_pic1, #main #sidebar .shop_info .shop_info_content .about_img .shop_info_pic1, #main #sidebar .shop_info .shop_info_content .shop_info_img .about_pic1, #main #sidebar .shop_info .shop_info_content .shop_info_img .shop_info_pic1 {
         display: block;
-        width: 100%;
-        height: 125px; }
+        width: 100%; }
       #main #sidebar .about .about_content .about_info p, #main #sidebar .about .about_content .shop_info_info p, #main #sidebar .about .shop_info_content .about_info p, #main #sidebar .about .shop_info_content .shop_info_info p, #main #sidebar .shop_info .about_content .about_info p, #main #sidebar .shop_info .about_content .shop_info_info p, #main #sidebar .shop_info .shop_info_content .about_info p, #main #sidebar .shop_info .shop_info_content .shop_info_info p {
         margin: 10px 0 20px;
         font-size: 12px;
@@ -367,8 +363,6 @@ header {
           #main #sidebar .about .about_content .about_img, #main #sidebar .about .about_content .shop_info_img, #main #sidebar .about .shop_info_content .about_img, #main #sidebar .about .shop_info_content .shop_info_img, #main #sidebar .shop_info .about_content .about_img, #main #sidebar .shop_info .about_content .shop_info_img, #main #sidebar .shop_info .shop_info_content .about_img, #main #sidebar .shop_info .shop_info_content .shop_info_img {
             margin-right: 11px;
             width: 100%; }
-            #main #sidebar .about .about_content .about_img .about_pic1, #main #sidebar .about .about_content .about_img .shop_info_pic1, #main #sidebar .about .about_content .shop_info_img .about_pic1, #main #sidebar .about .about_content .shop_info_img .shop_info_pic1, #main #sidebar .about .shop_info_content .about_img .about_pic1, #main #sidebar .about .shop_info_content .about_img .shop_info_pic1, #main #sidebar .about .shop_info_content .shop_info_img .about_pic1, #main #sidebar .about .shop_info_content .shop_info_img .shop_info_pic1, #main #sidebar .shop_info .about_content .about_img .about_pic1, #main #sidebar .shop_info .about_content .about_img .shop_info_pic1, #main #sidebar .shop_info .about_content .shop_info_img .about_pic1, #main #sidebar .shop_info .about_content .shop_info_img .shop_info_pic1, #main #sidebar .shop_info .shop_info_content .about_img .about_pic1, #main #sidebar .shop_info .shop_info_content .about_img .shop_info_pic1, #main #sidebar .shop_info .shop_info_content .shop_info_img .about_pic1, #main #sidebar .shop_info .shop_info_content .shop_info_img .shop_info_pic1 {
-              height: 81px; }
           #main #sidebar .about .about_content .about_info, #main #sidebar .about .about_content .shop_info_info, #main #sidebar .about .shop_info_content .about_info, #main #sidebar .about .shop_info_content .shop_info_info, #main #sidebar .shop_info .about_content .about_info, #main #sidebar .shop_info .about_content .shop_info_info, #main #sidebar .shop_info .shop_info_content .about_info, #main #sidebar .shop_info .shop_info_content .shop_info_info {
             width: 100%; }
             #main #sidebar .about .about_content .about_info p, #main #sidebar .about .about_content .shop_info_info p, #main #sidebar .about .shop_info_content .about_info p, #main #sidebar .about .shop_info_content .shop_info_info p, #main #sidebar .shop_info .about_content .about_info p, #main #sidebar .shop_info .about_content .shop_info_info p, #main #sidebar .shop_info .shop_info_content .about_info p, #main #sidebar .shop_info .shop_info_content .shop_info_info p {
@@ -462,13 +456,11 @@ footer .copyright p {
 #main #main_content #cate_img_sp {
   display: none; }
 #main #main_content #cate_img_pc {
-  width: 100%;
-  height: 170px; }
+  width: 100%; }
 @media (max-width: 550px) {
   #main #main_content #cate_img_sp {
     display: block;
-    width: 100%;
-    height: 85px; }
+    width: 100%; }
   #main #main_content #cate_img_pc {
     display: none; } }
 #main #main_content .list_item, #main #main_content .recent_item {
@@ -489,7 +481,6 @@ footer .copyright p {
     font-family: "Hiragino Kaku Gothic ProN"; }
     #main #main_content .list_item .item img, #main #main_content .recent_item .item img {
       width: 100%;
-      height: 205px;
       display: block;
       margin-right: auto;
       margin-left: auto;
@@ -508,7 +499,6 @@ footer .copyright p {
         width: 50%;
         padding: 9px 9px 17px 9px; }
         #main #main_content .list_item .item img, #main #main_content .recent_item .item img {
-          height: 132px;
           margin-bottom: 5px; }
         #main #main_content .list_item .item p, #main #main_content .recent_item .item p {
           font-size: 11px;
@@ -547,18 +537,18 @@ footer .copyright p {
 
 /* products.html
 ------------------------------------------------------------*/
-#main #main_content .pro_content {
+.pro #main_content .pro_content {
   background-color: #ffffff;
   padding: 40px 60px 80px 60px;
   margin-bottom: 30px; }
-  #main #main_content .pro_content .pro_header {
+  .pro #main_content .pro_content .pro_header {
     display: -webkit-flex;
     display: flex;
     justify-content: space-between;
     -webkit-flex-direction: row;
     flex-direction: row;
     margin-bottom: 30px; }
-    #main #main_content .pro_content .pro_header #pro_title {
+    .pro #main_content .pro_content .pro_header #pro_title {
       font-size: 14px;
       font-size: 1.4rem;
       font-family: "Hiragino Kaku Gothic ProN";
@@ -566,14 +556,14 @@ footer .copyright p {
       font-weight: bold;
       margin-bottom: 0;
       line-height: 22px; }
-    #main #main_content .pro_content .pro_header #part_No {
+    .pro #main_content .pro_content .pro_header #part_No {
       font-size: 10px;
       font-size: 1rem;
       font-family: "Hiragino Kaku Gothic ProN";
       color: #a6a6a6;
       margin-bottom: 0;
       line-height: 22px; }
-  #main #main_content .pro_content .pro_img {
+  .pro #main_content .pro_content .pro_img {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: row;
@@ -581,11 +571,11 @@ footer .copyright p {
     border-top: 1px solid #e3e8cf;
     border-bottom: 1px solid #e3e8cf;
     padding: 20px 0 15px 0; }
-    #main #main_content .pro_content .pro_img .display_img {
+    .pro #main_content .pro_content .pro_img .display_img {
       width: 71.05719%; }
-      #main #main_content .pro_content .pro_img .display_img img {
+      .pro #main_content .pro_content .pro_img .display_img img {
         width: 100%; }
-    #main #main_content .pro_content .pro_img .img_list {
+    .pro #main_content .pro_content .pro_img .img_list {
       display: -webkit-flex;
       display: flex;
       -webkit-flex-direction: row;
@@ -594,7 +584,7 @@ footer .copyright p {
       flex-wrap: wrap;
       width: 28.94281%;
       margin-bottom: 0; }
-      #main #main_content .pro_content .pro_img .img_list li {
+      .pro #main_content .pro_content .pro_img .img_list li {
         list-style: none;
         width: 50%;
         margin-bottom: 0;
@@ -602,18 +592,18 @@ footer .copyright p {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         padding-left: 8px; }
-        #main #main_content .pro_content .pro_img .img_list li img {
+        .pro #main_content .pro_content .pro_img .img_list li img {
           width: 100%; }
-  #main #main_content .pro_content .color_size {
+  .pro #main_content .pro_content .color_size {
     padding: 20px 0; }
-    #main #main_content .pro_content .color_size img {
+    .pro #main_content .pro_content .color_size img {
       display: block; }
-    #main #main_content .pro_content .color_size table {
+    .pro #main_content .pro_content .color_size table {
       margin-top: 19px;
       margin-bottom: 0;
       width: 100%;
       height: 78px; }
-      #main #main_content .pro_content .color_size table tr th {
+      .pro #main_content .pro_content .color_size table tr th {
         background-color: #f9f9f5;
         color: #887f69;
         letter-spacing: 0.05rem;
@@ -624,17 +614,17 @@ footer .copyright p {
         font-weight: normal;
         text-align: center;
         width: 30.30303%; }
-      #main #main_content .pro_content .color_size table tr td {
+      .pro #main_content .pro_content .color_size table tr td {
         width: 34.4697%;
         padding: 0; }
-        #main #main_content .pro_content .color_size table tr td input {
+        .pro #main_content .pro_content .color_size table tr td input {
           display: block;
           height: 15px;
           width: 15px;
           margin: 0 auto; }
-      #main #main_content .pro_content .color_size table tr .table_h {
+      .pro #main_content .pro_content .color_size table tr .table_h {
         width: 34.4697%; }
-  #main #main_content .pro_content #pro_detail {
+  .pro #main_content .pro_content #pro_detail {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: row;
@@ -642,13 +632,13 @@ footer .copyright p {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     border-bottom: 1px solid #e3e8cf; }
-    #main #main_content .pro_content #pro_detail #pro_valuation {
+    .pro #main_content .pro_content #pro_detail #pro_valuation {
       width: 61.07266%;
       padding-right: 25px;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box; }
-      #main #main_content .pro_content #pro_detail #pro_valuation .price {
+      .pro #main_content .pro_content #pro_detail #pro_valuation .price {
         display: -webkit-flex;
         display: flex;
         -webkit-flex-direction: row;
@@ -660,9 +650,9 @@ footer .copyright p {
         padding: 19px 0;
         border-top: 1px solid #e3e8cf;
         border-bottom: 1px solid #e3e8cf; }
-        #main #main_content .pro_content #pro_detail #pro_valuation .price img {
+        .pro #main_content .pro_content #pro_detail #pro_valuation .price img {
           display: block; }
-        #main #main_content .pro_content #pro_detail #pro_valuation .price p {
+        .pro #main_content .pro_content #pro_detail #pro_valuation .price p {
           margin-bottom: 0;
           padding-left: 70px;
           -moz-box-sizing: border-box;
@@ -672,13 +662,13 @@ footer .copyright p {
           font-size: 14px;
           font-size: 1.4rem;
           font-family: "Hiragino Kaku Gothic ProN"; }
-          #main #main_content .pro_content #pro_detail #pro_valuation .price p #mark {
+          .pro #main_content .pro_content #pro_detail #pro_valuation .price p #mark {
             color: #e80f66; }
-          #main #main_content .pro_content #pro_detail #pro_valuation .price p #money {
+          .pro #main_content .pro_content #pro_detail #pro_valuation .price p #money {
             color: #e80f66;
             font-size: 22px;
             font-size: 2.2rem; }
-      #main #main_content .pro_content #pro_detail #pro_valuation .quantity {
+      .pro #main_content .pro_content #pro_detail #pro_valuation .quantity {
         display: -webkit-flex;
         display: flex;
         -webkit-flex-direction: row;
@@ -688,24 +678,24 @@ footer .copyright p {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         padding: 19px 0; }
-        #main #main_content .pro_content #pro_detail #pro_valuation .quantity img {
+        .pro #main_content .pro_content #pro_detail #pro_valuation .quantity img {
           display: block;
           padding-right: 50px;
           -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
           box-sizing: border-box; }
-        #main #main_content .pro_content #pro_detail #pro_valuation .quantity input {
+        .pro #main_content .pro_content #pro_detail #pro_valuation .quantity input {
           display: block;
           margin-bottom: 0;
           height: 40px;
           width: 45%; }
-    #main #main_content .pro_content #pro_detail #cart {
-      display: block;
-      height: 55px;
+    .pro #main_content .pro_content #pro_detail #cart {
       width: 38.92734%; }
-  #main #main_content .pro_content .pro_description {
+      .pro #main_content .pro_content #pro_detail #cart img {
+        width: 100%; }
+  .pro #main_content .pro_content .pro_description {
     padding-top: 35px; }
-    #main #main_content .pro_content .pro_description h3 {
+    .pro #main_content .pro_content .pro_description h3 {
       font-size: 16px;
       font-size: 1.6rem;
       font-family: "Hiragino Kaku Gothic ProN";
@@ -713,19 +703,19 @@ footer .copyright p {
       letter-spacing: 0.05rem;
       color: #887f69;
       line-height: 24px; }
-    #main #main_content .pro_content .pro_description #pro_description_title {
+    .pro #main_content .pro_content .pro_description #pro_description_title {
       padding-bottom: 15px;
       border-bottom: 1px solid #887f69; }
-    #main #main_content .pro_content .pro_description p {
+    .pro #main_content .pro_content .pro_description p {
       font-size: 14px;
       font-size: 1.4rem;
       font-family: "Hiragino Kaku Gothic ProN";
       letter-spacing: 0.05rem;
       line-height: 24px; }
-    #main #main_content .pro_content .pro_description table {
+    .pro #main_content .pro_content .pro_description table {
       width: 100%;
       margin-bottom: 0; }
-      #main #main_content .pro_content .pro_description table tr th {
+      .pro #main_content .pro_content .pro_description table tr th {
         background-color: #f9f9f5;
         color: #887f69;
         letter-spacing: 0.05rem;
@@ -736,7 +726,7 @@ footer .copyright p {
         font-weight: normal;
         text-align: center;
         width: 30.30303%; }
-      #main #main_content .pro_content .pro_description table tr td {
+      .pro #main_content .pro_content .pro_description table tr td {
         color: #887f69;
         letter-spacing: 0.05rem;
         font-size: 12px;
@@ -744,61 +734,89 @@ footer .copyright p {
         font-family: "Hiragino Kaku Gothic ProN";
         font-weight: normal;
         width: 69.69697%; }
+
 @media (max-width: 550px) {
-  #main #main_content .pro_content {
-    padding: 20px 0 30px 0;
-    margin-top: 15px;
-    margin-bottom: 20px; }
-    #main #main_content .pro_content .pro_header {
-      -webkit-flex-direction: column;
-      flex-direction: column;
-      margin-bottom: 16px; }
-    #main #main_content .pro_content .pro_img {
-      padding: 10px 0 3px 0;
-      -webkit-flex-direction: column;
-      flex-direction: column; }
-      #main #main_content .pro_content .pro_img .display_img {
-        width: 100%;
-        margin-bottom: 3px; }
-      #main #main_content .pro_content .pro_img .img_list {
-        width: 100%;
-        justify-content: space-between;
-        align-content: space-between; }
-        #main #main_content .pro_content .pro_img .img_list li {
-          width: 18%;
-          padding-left: 0; }
-    #main #main_content .pro_content .color_size {
-      padding: 14px 0; }
-      #main #main_content .pro_content .color_size table {
-        margin-top: 14px; }
-    #main #main_content .pro_content #pro_detail {
-      -webkit-flex-direction: column;
-      flex-direction: column;
-      border-bottom: 0; }
-      #main #main_content .pro_content #pro_detail #pro_valuation {
-        width: 100%;
-        padding-right: 0; }
-        #main #main_content .pro_content #pro_detail #pro_valuation .price {
-          padding: 14px 0; }
-        #main #main_content .pro_content #pro_detail #pro_valuation .quantity {
-          padding: 14px 0;
-          border-bottom: 1px solid #e3e8cf; }
-      #main #main_content .pro_content #pro_detail #cart {
-        width: 70%;
-        margin: 0 auto;
-        padding-top: 14px; }
-    #main #main_content .pro_content .pro_description {
-      padding-top: 30px; }
-      #main #main_content .pro_content .pro_description h3 {
-        line-height: 23px;
-        letter-spacing: 0.09rem;
-        margin-bottom: 8px; }
-      #main #main_content .pro_content .pro_description #pro_description_title {
-        margin-bottom: 18px; }
-      #main #main_content .pro_content .pro_description p {
-        line-height: 20px; }
-      #main #main_content .pro_content .pro_description table tr td {
-        padding-right: 15px;
-        line-height: 17px; } }
+  .pro {
+    padding-left: 0;
+    padding-right: 0; }
+    .pro #main_content #breadcrumbs {
+      margin-left: 10px;
+      margin-right: 10px; }
+    .pro #main_content .pro_content {
+      padding: 20px 10px 30px 10px;
+      margin-top: 15px;
+      margin-bottom: 20px; }
+      .pro #main_content .pro_content .pro_header {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        margin-bottom: 16px; }
+      .pro #main_content .pro_content .pro_img {
+        padding: 10px 0 3px 0;
+        -webkit-flex-direction: column;
+        flex-direction: column; }
+        .pro #main_content .pro_content .pro_img .display_img {
+          width: 100%;
+          margin-bottom: 3px; }
+        .pro #main_content .pro_content .pro_img .img_list {
+          width: 100%;
+          justify-content: space-between;
+          align-content: space-between; }
+          .pro #main_content .pro_content .pro_img .img_list li {
+            width: 18%;
+            padding-left: 0; }
+      .pro #main_content .pro_content .color_size {
+        padding: 14px 0; }
+        .pro #main_content .pro_content .color_size table {
+          margin-top: 14px; }
+      .pro #main_content .pro_content #pro_detail {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        border-bottom: 0; }
+        .pro #main_content .pro_content #pro_detail #pro_valuation {
+          width: 100%;
+          padding-right: 0; }
+          .pro #main_content .pro_content #pro_detail #pro_valuation .price {
+            padding: 14px 0; }
+          .pro #main_content .pro_content #pro_detail #pro_valuation .quantity {
+            padding: 14px 0;
+            border-bottom: 1px solid #e3e8cf; }
+        .pro #main_content .pro_content #pro_detail #cart {
+          width: 70%;
+          margin: 0 auto;
+          padding-top: 14px; }
+      .pro #main_content .pro_content .pro_description {
+        padding-top: 30px; }
+        .pro #main_content .pro_content .pro_description h3 {
+          line-height: 23px;
+          letter-spacing: 0.09rem;
+          margin-bottom: 8px; }
+        .pro #main_content .pro_content .pro_description #pro_description_title {
+          margin-bottom: 18px; }
+        .pro #main_content .pro_content .pro_description p {
+          line-height: 20px; }
+        .pro #main_content .pro_content .pro_description table tr td {
+          padding-right: 15px;
+          line-height: 17px; }
+    .pro #main_content .recent_item {
+      margin-left: 10px;
+      margin-right: 10px; }
+    .pro #main_content .shopping_guide {
+      margin-left: 10px;
+      margin-right: 10px; }
+    .pro #sidebar .search {
+      margin-left: 10px;
+      margin-right: 10px; }
+    .pro #sidebar .link {
+      margin-left: 10px;
+      margin-right: 10px; }
+    .pro #sidebar .categories {
+      margin-left: 10px;
+      margin-right: 10px; }
+    .pro #sidebar .about {
+      margin-left: 10px;
+      margin-right: 10px; }
+    .pro #sidebar .shop_info {
+      margin-left: 10px;
+      margin-right: 10px; } }
 
 /*# sourceMappingURL=shopping-site.css.map */

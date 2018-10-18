@@ -60,12 +60,12 @@ a {
 header {
   padding-top: 40px;
   
-  #header_left_sp, #header_right_sp {
+  #header_right_sp {
     display: none;
   }
-  // #header_left_sp, #header_right_sp
+  // #header_right_sp
   
-  #header_left_pc {
+  #header_left {
     a {
       @include display-flex;
       align-items: center;
@@ -119,16 +119,20 @@ header {
   @media (max-width: 550px) {
     padding-top: 15px;
     
-    #header_left_pc, #header_right_pc {
+    #header_right_pc {
       display: none;
     }
-    // #header_left_pc (sp), #header_right_pc (sp)
+    // #header_right_pc (sp)
     
-    #header_left_sp {
-      display:block;
-      text-align: center;
+    #header_left {
+      a {
+        justify-content: center;
+        img {
+          width: 30%;
+        }
+      }
     }
-    // #header_left_sp (sp)
+    // #header_left (sp)
     
     #header_right {
       width: 100%;
@@ -152,16 +156,15 @@ header {
         
       .header_nav_sp {
         #menu {
-          background-color: $subColor;
+          width: 100%;
+          background-color: #ff6d77;
+          padding: 15px;
           margin-bottom: 0;
-          border-top: 1px solid $keyColor1;
-          border-right: 1px solid $keyColor1;
-          border-left: 1px solid $keyColor1;
-          border-width: medium;
+          @include box-sizing(border-box);
           z-index: 100;
           position: absolute;
-          top:67px;
-          right:3%;
+          top: 70px;
+          right: 0;
           display: none;
           
           li {
@@ -170,8 +173,13 @@ header {
             a {
               display: block;
               padding: 10px;
-              border-bottom: 1px solid $keyColor1;
-              border-width: medium;
+              border-bottom: 1px solid $subColor;
+              border-width: thin;
+              color: $subColor;
+              font-family: "Hiragino Kaku Gothic ProN";
+            }
+            #menu_guide {
+              border-bottom: 0;
             }
           }
         }
@@ -211,15 +219,11 @@ header {
     }
     img {
       display: block;
-      height: 280px;
       width: 100%;
     }
     @media (max-width: 550px) {
       .owl-dot {
         margin-bottom: 0;
-      }
-      img {
-        height: 120px;
       }
     }
     // max-widht: 550px
@@ -269,7 +273,6 @@ header {
       
       img {
         width: 100%;
-        height: 205px;
         display: block;
         margin-right: auto;
         margin-left: auto;
@@ -294,7 +297,6 @@ header {
         padding: 9px 9px 17px 9px;
         
         img {
-          height: 132px;
           margin-bottom: 5px;
         }
         p {
@@ -352,7 +354,6 @@ header {
       
       img {
         width: 55%;
-        height: 45px;
         margin-bottom: 15px;
       }
       p {
@@ -373,7 +374,6 @@ header {
       }
       img {
         width: 100%;
-        height: 37px;
         margin: 10px 0;
       }
       p {
@@ -406,9 +406,6 @@ header {
       
       .pay {
         border-left: 0px;
-        img {
-          height: 32px;
-        }
       }
       // .pay (sp)
     }
@@ -512,7 +509,6 @@ header {
           .about_pic1, .shop_info_pic1 {
             display: block;
             width: 100%;
-            height: 125px;
           }
         }
         
@@ -571,10 +567,6 @@ header {
           .about_img, .shop_info_img {
             margin-right: 11px;
             width: 100%;
-            
-            .about_pic1, .shop_info_pic1 {
-              height: 81px;
-            }
           }
           // .about_img, .shop_info_img (sp)
         
@@ -726,7 +718,6 @@ footer {
     
     #cate_img_pc {
       width: 100%;
-      height: 170px;
     }
     // #cate_img_pc
     
@@ -734,7 +725,6 @@ footer {
       #cate_img_sp {
         display: block;
         width: 100%;
-        height: 85px;
       }
       // #cate_img_sp (sp)
     
@@ -760,7 +750,6 @@ footer {
       
         img {
           width: 100%;
-          height: 205px;
           display: block;
           margin-right: auto;
           margin-left: auto;
@@ -785,7 +774,6 @@ footer {
           padding: 9px 9px 17px 9px;
           
           img {
-            height: 132px;
             margin-bottom: 5px;
           }
           p {
@@ -844,7 +832,8 @@ footer {
 
 /* products.html
 ------------------------------------------------------------*/
-#main {
+
+.pro {
   
   #main_content {
     
@@ -1027,9 +1016,10 @@ footer {
         // #pro_valuation
         
         #cart {
-          display: block;
-          height: 55px;
           width: (225 / 578) * 100%;
+          img {
+            width: 100%;
+          }
         }
         // #cart
       }
@@ -1091,10 +1081,26 @@ footer {
       
     }
     // .pro_content
-    
-    @media (max-width: 550px) {
+  }
+  // #main_content
+}
+// .pro
+
+@media (max-width: 550px) {
+  .pro {
+    padding-left: 0;
+    padding-right: 0;
+  
+    #main_content {
+      
+      #breadcrumbs {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      // #breadcrumbs (sp)
+      
       .pro_content {
-        padding: 20px 0 30px 0;
+        padding: 20px 10px 30px 10px;
         margin-top: 15px;
         margin-bottom: 20px;
         
@@ -1193,10 +1199,50 @@ footer {
         // .pro_description (sp)
       }
       // .pro_content (sp)
+      
+      .recent_item {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      // .recent_item (sp)
+      
+      .shopping_guide {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      // .shopping_guide (sp)
     }
-    // max-width: 550px
+    // #main_content (sp)
     
+    #sidebar {
+      .search {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      // .search (sp)
+      .link {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      // .link (sp)
+      .categories {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      // .categories (sp)
+      .about {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      // .about (sp)
+      .shop_info {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      // .shop_info (sp)
+    }
+    // #sidebar (sp)
   }
-  // #main_content
+  // .pro (sp)
 }
-// #main
+// max-width: 550px
