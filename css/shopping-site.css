@@ -680,7 +680,7 @@ footer .copyright p {
         padding: 19px 0; }
         .pro #main_content .pro_content #pro_detail #pro_valuation .quantity img {
           display: block;
-          padding-right: 50px;
+          margin-right: 50px;
           -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
           box-sizing: border-box; }
